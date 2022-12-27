@@ -1,0 +1,53 @@
+{
+    "name": "loyating/sensitive-word",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "php",
+        "hyperf",
+        "sensitive",
+        "dfa"
+    ],
+    "description": "php sensitive dfa",
+    "autoload": {
+        "psr-4": {
+            "Loyating\\SensitiveWord\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "HyperfTest\\SensitiveWord\\": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=8.0",
+        "ext-mbstring": "*",
+        "hyperf/contract": "~3.0.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "phpstan/phpstan": "^1.0",
+        "phpunit/phpunit": ">=7.0",
+        "hyperf/config": "~3.0.0"
+    },
+    "suggest": {
+        "hyperf/contract": "Required to read sensitiveword config.",
+        "hyperf/config": "Required to read sensitiveword config."
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "scripts": {
+        "test": "phpunit -c phpunit.xml --colors=always",
+        "analyse": "phpstan analyse --memory-limit 1024M -l 0 ./src",
+        "cs-fix": "php-cs-fixer fix $1"
+    },
+    "extra": {
+        "hyperf": {
+            "config": "Loyating\\SensitiveWord\\ConfigProvider"
+        }
+    }
+}
